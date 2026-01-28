@@ -1,0 +1,33 @@
+# Configuration for LSTM state estimation (requires implementing LSTM class)
+# Usage: python -m articulated.estimation.train --config articulated/configs/estimation/lstm.yaml
+
+seed: 42
+
+model:
+  input_size: 6
+  hidden_size: 256
+  output_size: 256
+  model_type: "lstm"      # Requires implementing LSTM class in model.py
+  learning_rate: 1e-3
+  weight_decay: 1e-5
+
+data:
+  batch_size: 64
+  seq_length: 100
+  n_trajectories_train: 1000
+  n_trajectories_val: 100
+  n_place_cells: 256
+  dt: 0.01
+
+trainer:
+  max_epochs: 100
+  accelerator: "auto"
+  devices: 1
+  log_every_n_steps: 10
+
+logging:
+  wandb: false
+  project: "articulated-estimation"
+  save_dir: "logs"
+
+checkpoint_dir: "checkpoints/estimation"

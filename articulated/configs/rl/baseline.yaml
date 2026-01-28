@@ -1,0 +1,16 @@
+# Team RL: Baseline configuration (raw observations)
+# Usage: python -m articulated.rl.train --config articulated/configs/rl/baseline.yaml
+
+seed: 42
+
+agent:
+  algorithm: "ppo"
+  use_embedding: false
+  learning_rate: 3e-4
+  n_steps: 2048
+  batch_size: 64
+
+training:
+  total_timesteps: 100000
+  eval_freq: 10000
+  save_path: "checkpoints/rl/baseline_ppo"

@@ -1,0 +1,20 @@
+# Team RL: Embedded observations configuration
+# Usage: python -m articulated.rl.train --config articulated/configs/rl/embedded.yaml
+#
+# NOTE: Requires trained estimation model from Team Estimation
+# Update embedding_model_path to point to their checkpoint
+
+seed: 42
+
+agent:
+  algorithm: "ppo"
+  use_embedding: true
+  embedding_model_path: "checkpoints/estimation/best.ckpt"  # Update this path
+  learning_rate: 3e-4
+  n_steps: 2048
+  batch_size: 64
+
+training:
+  total_timesteps: 100000
+  eval_freq: 10000
+  save_path: "checkpoints/rl/embedded_ppo"
