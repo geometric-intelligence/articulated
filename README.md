@@ -66,7 +66,7 @@ articulated/
 │   │   └── train.py         # Training script
 │   │
 │   ├── analysis/            # Team Interpretation
-│   │   ├── dimensionality.py  # PCA, UMAP
+│   │   ├── dimensionality.py  # PCA
 │   │   ├── tuning.py        # Tuning curve analysis
 │   │   └── visualization.py # Plotting utilities
 │   │
@@ -127,12 +127,12 @@ python -m articulated.estimation.train --config articulated/configs/estimation/r
 **Goal:** Analyze how the RNN encodes joint position using dimensionality reduction and tuning curves.
 
 **Key files:**
-- `articulated/analysis/dimensionality.py`: PCA, UMAP
+- `articulated/analysis/dimensionality.py`: PCA
 - `articulated/analysis/tuning.py`: Tuning curve analysis
 - `articulated/analysis/visualization.py`: Plotting
 
 **Key TODOs:**
-1. Apply PCA/UMAP to hidden states from trained models
+1. Apply PCA to hidden states from trained models
 2. Compute tuning curves w.r.t. configuration variables (joint angles)
 3. Check if representations have structure (e.g. grid-like, etc.).
 
