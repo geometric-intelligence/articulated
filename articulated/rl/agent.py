@@ -6,15 +6,10 @@ Tasks:
 3. Compare raw vs embedded observations
 """
 
-from pathlib import Path
 from typing import Optional
 
 import gymnasium as gym
 from stable_baselines3 import PPO, SAC
-from stable_baselines3.common.callbacks import EvalCallback
-from stable_baselines3.common.vec_env import DummyVecEnv
-
-from articulated.rl.environment import ReacherWithEmbedding
 
 
 class RLAgent:

@@ -3,7 +3,7 @@
 import pytest
 import torch
 
-from articulated.estimation.model import RNN, LSTM, GRU, StateEstimationModel
+from articulated.estimation.model import GRU, LSTM, RNN, StateEstimationModel
 
 
 class TestRNN:

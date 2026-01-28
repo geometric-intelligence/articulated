@@ -15,6 +15,4 @@ def compute_tuning_curves(
     n_bins: int = 20,
 ) -> np.ndarray:
     """Compute tuning curves of neurons with respect to configuration variables."""
-    return NotImplementedError("Not implemented")
-
-
+    raise NotImplementedError("Not implemented")

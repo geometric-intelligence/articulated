@@ -7,7 +7,7 @@ Tasks:
 4. Provide method to extract embeddings for Team RL
 """
 
-from typing import Literal, Optional
+from typing import Literal, Optional, Union
 
 import lightning as L
 import torch
@@ -148,6 +148,7 @@ class StateEstimationModel(L.LightningModule):
         self.weight_decay = weight_decay
 
         # Instantiate the appropriate model
+        self.model: Union[RNN, LSTM, GRU]
         if model_type == "rnn":
             self.model = RNN(input_size, hidden_size, output_size)
         elif model_type == "lstm":
@@ -200,9 +201,7 @@ class StateEstimationModel(L.LightningModule):
             lr=self.learning_rate,
             weight_decay=self.weight_decay,
         )
-        scheduler = torch.optim.lr_scheduler.StepLR(
-            optimizer, step_size=50, gamma=0.5
-        )
+        scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=50, gamma=0.5)
         return {"optimizer": optimizer, "lr_scheduler": scheduler}
 
     # =========================================================================

@@ -13,7 +13,7 @@ The goal is to compare RL performance using:
 2. Embeddings from Team Estimation's trained model
 """
 
-from articulated.rl.environment import ReacherWithEmbedding
 from articulated.rl.agent import RLAgent
+from articulated.rl.environment import ReacherWithEmbedding
 
 __all__ = ["ReacherWithEmbedding", "RLAgent"]

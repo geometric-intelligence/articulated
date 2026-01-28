@@ -114,7 +114,7 @@ def plot_tuning_curves(
     n_bins = tuning_curves.shape[2]
     x = np.arange(n_bins)
 
-    for i, neuron_idx in enumerate(neuron_indices):
+    for neuron_idx in neuron_indices:
         curve = tuning_curves[neuron_idx, config_dim]
         ax.plot(x, curve, label=f"Neuron {neuron_idx}", alpha=0.8)
 

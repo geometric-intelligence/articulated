@@ -31,9 +31,8 @@ def compute_pca(
     stats = {
         "explained_variance_ratio": pca.explained_variance_ratio_.tolist(),
         "cumulative_variance": np.cumsum(pca.explained_variance_ratio_).tolist(),
-        "n_components_95": np.argmax(
-            np.cumsum(pca.explained_variance_ratio_) >= 0.95
-        ) + 1,
+        "n_components_95": np.argmax(np.cumsum(pca.explained_variance_ratio_) >= 0.95)
+        + 1,
     }
 
     return projected, pca, stats

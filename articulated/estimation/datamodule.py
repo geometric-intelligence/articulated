@@ -146,9 +146,7 @@ class EstimationDataModule(L.LightningDataModule):
         """
         raise NotImplementedError("Trajectory generation not yet implemented")
 
-    def _compute_place_cell_activations(
-        self, configuration: np.ndarray
-    ) -> np.ndarray:
+    def _compute_place_cell_activations(self, configuration: np.ndarray) -> np.ndarray:
         """Compute place cell activations for a single configuration.
 
         TODO: Implement place cell activation:
