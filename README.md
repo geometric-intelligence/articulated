@@ -1,11 +1,17 @@
 # Articulated
 
-Learning Neural Manifold Representations for Articulated Robotics
+
+<h3 align="center">
+    Learning Neural Manifold Representations for Articulated Roboticss
+</h3>
+
 
 
 <div align="center">
     <img src="assets/overview.png" width="600">
 </div>
+
+Note: The ECE594 project is currently limited in scope to "Aim 1" above.
 
 ## Overview
 
@@ -196,7 +202,7 @@ pytest tests/test_models.py
 ## Contributors
 
 **Project Leads:**
-- Mathilde Papillon (mpapillon@ucsb.edu)
+- Mathilde Papillon (papillon@ucsb.edu)
 - Francisco Acosta (facosta@ucsb.edu)
 Geometric Intelligence Lab @ UCSB
 
