@@ -179,9 +179,17 @@ hidden_states = model.get_hidden_states(velocity_trajectory)
 # Baseline (raw observations)
 python -m articulated.rl.train --config articulated/configs/rl/baseline.yaml
 
+# Tuned baselines (more steps, normalization, TensorBoard logging)
+python -m articulated.rl.train --config articulated/configs/rl/baseline_tuned.yaml
+python -m articulated.rl.train --config articulated/configs/rl/baseline_tuned2.yaml
+
 # With embeddings (requires trained estimation model)
 python -m articulated.rl.train --config articulated/configs/rl/embedded.yaml
 ```
+
+**Team RL logging & visualization:**
+- TensorBoard: set `tensorboard_log` in config and run `tensorboard --logdir logs/rl`
+- Render a policy: `python -m articulated.rl.render --checkpoint <path>.zip --out logs/rl/reacher.mp4`
 
 **Resources:**
 - [Gymnasium Reacher-v5](https://gymnasium.farama.org/environments/mujoco/reacher/)
@@ -220,5 +228,3 @@ Geometric Intelligence Lab @ UCSB
 - **Team Estimation:** Awsaf Rahman (lead), Siheng Wang
 - **Team Interpretation:** Rohan Koshy, Siheng Wang
 - **Team RL:** Pushpita Joardar, Hun Tae Kim
-
-
